@@ -49,6 +49,7 @@ export default function HomePage() {
   }
 
   const storedCalculations = getStoredCalculations()
+  
 
   return (
     <div className="min-h-screen bg-background">
@@ -70,6 +71,18 @@ export default function HomePage() {
               <Badge variant="outline" className="hidden sm:flex">
                 ISO 27005 / NIST SP 800-30
               </Badge>
+              
+              {/* Botón de prueba de Sentry */}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  throw new Error('Test error for Sentry - Risk Calculator Test')
+                }}
+                className="text-red-600 border-red-200 hover:bg-red-50 dark:text-red-400 dark:border-red-800 dark:hover:bg-red-950"
+              >
+                Test Sentry
+              </Button>
               
               <Button
                 variant="ghost"
